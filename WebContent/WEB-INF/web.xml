@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>onlineJobSearch</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.RegisterServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/RegisterServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RegisterAdminServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.RegisterAdminServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RegisterAdminServlet</servlet-name>
+		<url-pattern>/RegisterAdminServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewByJob</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.ViewByJob</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewByJob</servlet-name>
+		<url-pattern>/ViewByJob</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddNewCompany</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.AddNewCompany</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddNewCompany</servlet-name>
+		<url-pattern>/AddNewCompany</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>PostJobServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.PostJobServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PostJobServlet</servlet-name>
+		<url-pattern>/PostJobServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddNewJobDesignationServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.AddNewJobDesignationServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AddNewJobDesignationServlet</servlet-name>
+		<url-pattern>/AddNewJobDesignationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FindCompanyServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.FindCompanyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FindCompanyServlet</servlet-name>
+		<url-pattern>/FindCompanyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ReviewServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.ReviewServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReviewServlet</servlet-name>
+		<url-pattern>/ReviewServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RateServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.RateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RateServlet</servlet-name>
+		<url-pattern>/RateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UserProfileServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.UserProfileServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserProfileServlet</servlet-name>
+		<url-pattern>/UserProfileServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SearchByLocation</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.SearchByLocation</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SearchByLocation</servlet-name>
+		<url-pattern>/SearchByLocation</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DisplayAllCompaniesServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.DisplayAllCompaniesServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DisplayAllCompaniesServlet</servlet-name>
+		<url-pattern>/DisplayAllCompaniesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DisplayAllJobDesignationServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.DisplayAllJobDesignationServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DisplayAllJobDesignationServlet</servlet-name>
+		<url-pattern>/DisplayAllJobDesignationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DisplayAllTechnologiesServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.DisplayAllTechnologiesServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DisplayAllTechnologiesServlet</servlet-name>
+		<url-pattern>/DisplayAllTechnologiesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RequestVacancyServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.RequestVacancyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RequestVacancyServlet</servlet-name>
+		<url-pattern>/RequestVacancyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewPublishedJobsServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.ViewPublishedJobsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewPublishedJobsServlet</servlet-name>
+		<url-pattern>/ViewPublishedJobsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateVacancyServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.UpdateVacancyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateVacancyServlet</servlet-name>
+		<url-pattern>/UpdateVacancyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ApplyForJobServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.ApplyForJobServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ApplyForJobServlet</servlet-name>
+		<url-pattern>/ApplyForJobServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewAppliedUsersServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.ViewAppliedUsersServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewAppliedUsersServlet</servlet-name>
+		<url-pattern>/ViewAppliedUsersServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>GetAllDataServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.GetAllDataServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GetAllDataServlet</servlet-name>
+		<url-pattern>/GetAllDataServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewAppliedJobsServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.ViewAppliedJobsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewAppliedJobsServlet</servlet-name>
+		<url-pattern>/ViewAppliedJobsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ReviewsOnInterviewServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.ReviewsOnInterviewServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReviewsOnInterviewServlet</servlet-name>
+		<url-pattern>/ReviewsOnInterviewServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RetreiveAllCompanyServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.RetreiveAllCompanyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RetreiveAllCompanyServlet</servlet-name>
+		<url-pattern>/RetreiveAllCompanyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateContactedUsersServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.UpdateContactedUsersServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateContactedUsersServlet</servlet-name>
+		<url-pattern>/UpdateContactedUsersServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AdminStatisticsServlet</servlet-name>
+		<servlet-class>com.zilker.onlinejobsearch.servlet.AdminStatisticsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AdminStatisticsServlet</servlet-name>
+		<url-pattern>/AdminStatisticsServlet</url-pattern>
+	</servlet-mapping>
+</element>
+
+
+
+
