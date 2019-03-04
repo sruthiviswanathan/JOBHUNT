@@ -1,6 +1,7 @@
 package com.zilker.onlinejobsearch.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -65,7 +66,9 @@ public class RequestVacancyServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PrintWriter out = response.getWriter();
 		try {
+			
 			int jobId=0,userId=0;
 			HttpSession session = request.getSession();
 			String email = (String) session.getAttribute("email");
@@ -77,6 +80,8 @@ public class RequestVacancyServlet extends HttpServlet {
 			String jobDesignation = request.getParameter("job");
 			String location = request.getParameter("location");
 			String salary = request.getParameter("salary");
+	;
+			
 			jobrequest.setEmail(user.getEmail());
 			
 			jobId = Integer.parseInt(jobDesignation);
@@ -93,6 +98,9 @@ public class RequestVacancyServlet extends HttpServlet {
 			if(userDelegate.requestNewVacancy(jobrequest, user)) {
 				request.setAttribute("saved","yes");
 				
+//				response.setContentType("application/json");
+//				out.print("success");
+//				out.flush();
 				RequestDispatcher rd = request.getRequestDispatcher("Pages/jsp/requestvacancy.jsp");
 				rd.forward(request, response);
 			}else {

@@ -50,7 +50,7 @@
         <div id="snackbar">
                         
         </div>
-        <script>
+       <script>
         				function displaySuccessMessage(){
         					 var para = document.createElement("p");
         					  var node = document.createTextNode("YOUR REQUEST IS SAVED!!YOU WILL BE NOTIFIED WHEN YOUR REQUIREMENT MATCHES ANY VACANCIES!!");
@@ -62,22 +62,22 @@
         				}
         				
 		</script>
-        				<c:if test="${saved == 'yes'}">
+        				 <c:if test="${saved == 'yes'}">
         				<script>
         				displaySuccessMessage();
         				</script>
-						</c:if>
+						</c:if> 
         				
         
       <div class="container__requestvacancy col-xs-12 col-md-12">
 						        
-    		<form action="${Config.BASE_PATH}RequestVacancyServlet" id="requestvacancy" name="requestvacancy" onsubmit="return validateRequestVacancy()" method="post" >
+    		<form action="${Config.BASE_PATH}RequestVacancyServlet" id="requestvacancy" name="requestvacancy" onsubmit="return validateRequestVacancy();" method="post" >
         
         
         		<div class="requestvacancy__field col-xs-12 col-md-12">
                 <label for="select-job" class="field__entry row col-75"><b>JOB DESIGNATION*</b></label>
                             
-                       <select id="job" name="job" class="select row col-75">
+                       <select id="job" name="job" class="formValue select row col-75">
 					 	<option value="">Select a Job Designation</option>
 						<c:forEach var="job" items="${jobs}">
 							<option value="${job.getJobId()}"><c:out value="${job.getJobRole()}" /></option>
@@ -89,18 +89,19 @@
             
                 <div class="requestvacancy__field col-xs-12 col-md-12">
                 <label for="location" class="field__entry row col-75"><b>LOCATION*</b></label>
-                <input type="text" class=" field__input row col-75" id="location" name="location" placeholder="Enter Job Location..">
+                <input type="text" class="formValue field__input row col-75" id="location" name="location" placeholder="Enter Job Location..">
                 <span class="error"><p id="location_error"></p></span>
                 </div>
                
                 <div class="requestvacancy__field col-xs-12 col-md-12">
                 <label for="salary" class="field__entry row col-75"><b>SALARY EXPECTED(LPA)*</b></label>
-                <input type="number" class="field__input row col-75" id="salary" name="salary" placeholder="Enter Salary.." step=".01">
+                <input type="number" class="formValue field__input row col-75" id="salary" name="salary" placeholder="Enter Salary.." step=".01">
                 <span class="error"><p id="salary_error"></p></span>
        			</div>
        			
 				<div class="requestvacancy__nav">
-        		<input type="submit" class="button col-xs-12 col-md-12" value="SAVE JOB" name="Submit">  
+        		<input type="submit" class="button col-xs-12 col-md-12" value="SAVE JOB" name="Submit">
+        		<!-- <button type="button" class="button col-xs-12 col-md-12" onclick="myFunction(); return false;">SAVE JOB</button> -->
         		<button type="reset" id="cancel" class="button cancelbtn col-xs-12 col-md-12">CANCEL</button>
         		</div>
         	

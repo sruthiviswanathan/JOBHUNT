@@ -8,16 +8,6 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-/*function viewPage(flag){
-	if(flag === "error"){
-		viewsignup();
-		
-	}else{
-		viewlogin();
-	}
-}*/
-
-
 
 function viewlogin() {
 	var x = document.getElementById("hideonlogin");
