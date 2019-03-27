@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%> 
+	pageEncoding="UTF-8"%>
+<%-- <jsp:include page="/GetDataServlet"/> --%>
 <%@ page import="com.zilker.onlinejobsearch.config.Config"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -19,7 +20,7 @@
 </head>
 
 
-<body onload="viewsignup()">
+<body onload="viewlogin()">
 
 	<div class="container">
  		
@@ -44,19 +45,20 @@
 					
 					<div class="login col-xs-12 col-md-12">
 						
+						
 						<div class="login__field col-xs-12 col-md-12">
-						<label for="email" class="field__entry row col-25"><b>EMAIL*</b></label> <input class="field__input"
-							 class="row col-75" type="email"
+						<label for="email" class="field__entry row col-25"><b>EMAIL*</b></label> 
+						<input class="field__input row col-75" type="email"
 							placeholder="Your Email ID.." name="email"> 
 							<span class="error"><p id="log_em_error"></p></span> 
 						</div>
 					
-					<div class="login__field col-xs-12 col-md-12">
-							<label for="psw" class="field__entry row col-25"><b>PASSWORD*</b></label> <input
-							 class="field__input row col-75" type="password"
+						<div class="login__field col-xs-12 col-md-12">
+							<label for="psw" class="field__entry row col-25"><b>PASSWORD*</b></label> 
+							<input class="field__input row col-75" type="password"
 							placeholder="Enter Password" name="psw"> 
 							 <span class="error"><p id="log_psw_error"></p></span> 
-					</div>
+						</div>
 					
 					<div class="error" id="loginError">
 					<c:if test="${loginError == 'error'}">
@@ -85,11 +87,11 @@
 				method="post">
 				<div class="signupforms__signup">
 				
-			  
+			 	
+				
 				<div id="defaultfields">
 					
-				
-							<div class="error" id="registerError">
+					        <div class="error" id="registerError">
 							<c:if test="${userRegistrationError == 'error'}">
 							<c:out value="This Email ID is already Registered"/>
 							</c:if>
@@ -138,6 +140,7 @@
 					</div>
 						
 					
+					
 					<div class="signup__field col-xs-12 col-md-12">
 						<label for="cname" class="field__entry row col-25"><b>COMPANY NAME*</b></label>
 						<input type="text" class="field__input row col-75" name="companyName" placeholder="Company name..">
@@ -156,6 +159,8 @@
 						
 						 <div class="tags-input field__input row col-75" id="skill" data-name="tags-input">
 						 </div>
+						
+						
 					</div>
 					
 					<div class="signup__nav">

@@ -49,6 +49,7 @@ public class ApplyForJobServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		PrintWriter out = response.getWriter();
 		try {
 			response.setContentType("text/html;charset=UTF-8");
@@ -75,8 +76,10 @@ public class ApplyForJobServlet extends HttpServlet {
 			company.setCompanyId(companyId);
 			company.setJobId(jobId);
 			company.setLocation(location);
+			
 			if(userDelegate.applyForJob(company,user)) {
 			
+				
 				response.setContentType("application/json");
 				out.print("success");
 				out.flush();

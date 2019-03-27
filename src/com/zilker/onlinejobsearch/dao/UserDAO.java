@@ -712,9 +712,9 @@ public class UserDAO {
 			preparestatement.setInt(7, user.getUserId());
 			preparestatement.executeUpdate();
 			flag = true;
-
+			
 		} catch (SQLException e) {
-		
+			
 			throw e;
 
 		} finally {

@@ -69,6 +69,7 @@ public class RequestVacancyServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		try {
 			
+			
 			int jobId=0,userId=0;
 			HttpSession session = request.getSession();
 			String email = (String) session.getAttribute("email");
@@ -80,7 +81,6 @@ public class RequestVacancyServlet extends HttpServlet {
 			String jobDesignation = request.getParameter("job");
 			String location = request.getParameter("location");
 			String salary = request.getParameter("salary");
-	;
 			
 			jobrequest.setEmail(user.getEmail());
 			
@@ -96,20 +96,19 @@ public class RequestVacancyServlet extends HttpServlet {
 			job = jobDelegate.displayJobs(jobMapping);
 			request.setAttribute("jobs", job); 
 			if(userDelegate.requestNewVacancy(jobrequest, user)) {
-				request.setAttribute("saved","yes");
+			
 				
-//				response.setContentType("application/json");
-//				out.print("success");
-//				out.flush();
-				RequestDispatcher rd = request.getRequestDispatcher("Pages/jsp/requestvacancy.jsp");
-				rd.forward(request, response);
+				response.setContentType("application/json");
+				out.print("success");
+				out.flush();
+			
 			}else {
 				response.sendRedirect("Pages/jsp/error.jsp");
 			}
 		}catch(Exception e) {
-			request.setAttribute("exception",e);
-			RequestDispatcher rd = request.getRequestDispatcher("Pages/jsp/error.jsp");
-			rd.forward(request, response);
+			 response.setContentType("application/json");
+			 out.print("error");
+			 out.flush();
 		}
 	}
 

@@ -363,4 +363,111 @@ function updateUser()
     return true; 
 }
 
+function validateRequestVacancy(){
+    var location = document.forms["requestvacancy"]["location"];               
+    var what =  document.forms["requestvacancy"]["job"];  
+    var salary = document.forms["requestvacancy"]["salary"];   
+   
+    if (what.selectedIndex < 1)                  
+    { 
+    	 jobError = "Please Select a Job Designation";
+      	 document.getElementById("job_error").innerHTML = jobError; 
+        what.focus(); 
+        return false; 
+    } 
+   
 
+    if (location.value == "")                                  
+    { 
+    	 locationError = "Please enter the location of job.";
+      	 document.getElementById("location_error").innerHTML = locationError; 
+        location.focus(); 
+        return false; 
+    }
+
+    if (salary.value == "")                               
+    { 
+    	 salaryError = "Please enter a valid salary amount.";
+      	 document.getElementById("salary_error").innerHTML =  salaryError ;
+        salary.focus(); 
+        return false; 
+    }
+    
+    return true; 
+}
+
+
+function requestVacancy(event,id){
+
+	if(validateRequestVacancy()){
+	    var formEl = $(event);
+	    var submit = document.getElementById(id);
+	    $.ajax({
+	      type: 'POST',
+	      url: formEl.prop('action'),
+	      accept: {
+	        javascript: 'application/javascript'
+	      },
+	      data: formEl.serialize(),
+	      beforeSend: function() {
+	    	  console.log(submit);
+	      },
+	      dataType:"text",
+	      success:function(msg){
+	    	  console.log(msg);
+	    	  if (msg === 'success'){
+	    	 
+	    	  var para = document.createElement("p");
+	    	  var node = document.createTextNode("YOUR REQUEST IS SAVED!!YOU WILL BE NOTIFIED WHEN YOUR REQUIREMENT MATCHES ANY VACANCIES!!");
+	    	  para.appendChild(node);
+	    	  var element = document.getElementById("snackbar");
+	    	  element.className="show";
+	    	  element.appendChild(para);
+	    	  setTimeout(function(){ element.className = element.className.replace("show", ""); }, 5000);
+	    	  } 
+	    	  else if(msg === 'error'){
+	    		  var para = document.createElement("p");
+		    	  var node = document.createTextNode("OOPS!SOMETHING WENT WRONG");
+		    	  para.appendChild(node);
+		    	  var element = document.getElementById("snackbar");
+		    	  element.className="show";
+		    	  element.appendChild(para);
+		    	  setTimeout(function(){ element.className = element.className.replace("show", ""); }, 5000);  
+	    	  }
+	      }
+	    });
+
+return true;
+	}
+}
+
+function removeErrorMessages() {
+	    var location = document.getElementById("location_error"); ;               
+	    var what =  document.getElementById("job_error");  
+	    var salary = document.getElementById("salary_error"); ;   
+	   
+	    if (what.value != "")                  
+	    { 
+	    	
+	    	 document.getElementById("job_error").innerHTML = ""; 
+	      
+	    } 
+	   
+
+	    if (location.value != "")                                  
+	    { 
+	    	
+	      	 document.getElementById("location_error").innerHTML = ""; 
+	      
+	      
+	    }
+
+	    if (salary.value != "")                               
+	    { 
+	    	
+	      	 document.getElementById("salary_error").innerHTML = "" ;
+	         
+	    }
+	    
+	    return true; 
+}
